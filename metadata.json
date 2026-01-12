@@ -16,7 +16,7 @@
         "ServiceTypes": [
             "Plasma/LookAndFeel"
         ],
-        "Version": "1.0",
+        "Version": "1.0"
     },
     "X-KPackage-Dependencies": [
         "kns://window-decorations.knsrc/api.kde-look.org/2132512",
@@ -26,7 +26,8 @@
         "kns://plasmoids.knsrc/api.kde-look.org/2129423",
         "kns://plasmoids.knsrc/api.kde-look.org/2136505",
         "kns://plasmoids.knsrc/api.kde-look.org/2132554",
-        "kns://plasmoids.knsrc/api.kde-look.org/2137418" //simple seperator
+        "kns://plasmoids.knsrc/api.kde-look.org/2137418",
+        "kns://plasma-themes.knsrc/api.kde-look.org/1901768"
       ]
 
 }
