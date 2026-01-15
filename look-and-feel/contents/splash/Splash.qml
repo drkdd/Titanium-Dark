@@ -1,4 +1,4 @@
-import QtQuick 2.1
+import QtQuick 2.5
 
 Image {
     id: root
@@ -16,20 +16,23 @@ Image {
         anchors.horizontalCenter: parent.horizontalCenter
         y: root.height
         source: "images/rectangle.svg"
+		// Fedora logo
         Image {
             source: "images/logo.svg"
             anchors.centerIn: parent
         }
+		// Grey rectangle
         Rectangle {
-            radius: 3
-            color: "#d8dee9"
+            radius: 4
+            color: "#434344"
             anchors {
                 bottom: parent.bottom
-                bottomMargin: 50
+                bottomMargin: -50
                 horizontalCenter: parent.horizontalCenter
             }
-            height: 6
-            width: height*36
+            height: 4
+            width: height*64
+			// Filled in blue
             Rectangle {
                 radius: 3
                 anchors {
@@ -38,7 +41,7 @@ Image {
                     bottom: parent.bottom
                 }
                 width: (parent.width / 6) * (stage - 1)
-                color: "#5e81ac"
+                color: "#ffffff"
                 Behavior on width { 
                     PropertyAnimation {
                         duration: 250

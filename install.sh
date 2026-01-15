@@ -3,12 +3,16 @@
 KWINRC="$HOME/.config/kwinrc"
 KVANTUM_CONFIG="$HOME/.config/Kvantum/kvantum.kvconfig"
 
+SCRIPT_DIR="look-and-feel/contents/plasmoidsetupscripts"
+
+THEME_NAME="Titanium-Dark"
+
 touch "$KWINRC"
 touch "$KVANTUM_CONFIG"
 
 setKvantumTheme(){
     local section="[General]"
-    local setting="theme=Titanium-Dark"
+    local setting="theme=$THEME_NAME"
 
     mkdir -p "$(dirname "$KVANTUM_CONFIG")"
 
@@ -63,23 +67,43 @@ installFiles(){
     echo "installing color scheme..."
     cp  "./colors/TitaniumDark.colors" "$colorschemes_dir/"
 
+    echo "installing kvantum..."
+    
+    sudo dnf install -y kvantum #fedora
+    sudo apt install -y kvantum #ubuntu
+    sudo pacman install -y kvantum #arch
+
     echo "installing kvantum theme..."
-    if [ -d "$kvantum_dir/Titanium-Dark" ]; then
+    if [ -d "$kvantum_dir/$THEME_NAME" ]; then
         echo "kvantum is already set."
     else
-        cp -r "./kvantum" "$kvantum_dir/Titanium-Dark"
+        cp -r "./kvantum" "$kvantum_dir/$THEME_NAME"
     fi
 
     echo "installing global theme..."
-    if [ -d "${lookandfeel_dir}/Titanium-Dark" ]; then
+    if [ -d "${lookandfeel_dir}/$THEME_NAME" ]; then
         echo "global theme is already set."
     else
-        cp -r "./look-and-feel" "$lookandfeel_dir/Titanium-Dark"
+        cp -r "./look-and-feel" "$lookandfeel_dir/$THEME_NAME"
     fi
     echo "installation completed."
+}
+
+runScripts(){
+    echo "running scripts..."
+    for script in "$SCRIPT_DIR"/*.js; do
+        if [ -f "$script" ]; then
+            echo "Applying: $(basename $script)"
+            # DBus üzerinden Plasma'ya JS komutunu gönderiyoruz
+            qdbus org.kde.plasmashell /PlasmaShell org.kde.PlasmaShell.evaluateScript "$(cat "$script")"
+        fi
+    done
 }
 
 setKvantumTheme
 removeTitlebar
 installFiles
+echo "activating theme..."
+lookandfeeltool -a $THEME_NAME
+runScripts
 # plasmashell --replace & disown
