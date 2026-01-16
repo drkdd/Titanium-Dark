@@ -50,7 +50,7 @@ Seting Titanium is so simple just:
   
   (Now you can delete folder if you want, all files are copied to necessarry locations)
 
-Removing Titanium :
+## Removing Titanium :
 
   Give permission to uninstallation script:
   
