@@ -1,7 +1,7 @@
 # Titanium Dark Theme
 
 <p align="center">
-    <img src="previews/preview.png">
+    <img src="look-and-feel/contents/previews/preview.png">
 </p>
 
 ## What is Titanium?
@@ -32,11 +32,15 @@ Seting Titanium is so simple just:
     
     git clone "https://github.com/drkdd/Titanium-Dark.git"
     
-  Go to folder 
+  Go to folder:
   
     cd Titanium-Dark
     
-  Run installation script:
+  Give permission to script:
+  
+    chmod +x install.sh
+    
+  Run script:
   
     ./install.sh
     
@@ -44,9 +48,15 @@ Seting Titanium is so simple just:
   
   (Now you can delete folder if you want, all files are copied to necessarry locations)
 
-### Author's Notes:
-- I haven't tested if the scripts work well so they maybe do not work. (If you see any error please mail me.)
-- uninstall.sh file will be added.
+Removing Titanium :
+
+  Give permission to uninstallation script:
+  
+    chmod +x uninstall.sh
+    
+  Run script:
+    
+    ./uninstall.sh
 
 ##  🌟 Credits & Acknowledgments
 

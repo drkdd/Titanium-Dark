@@ -68,10 +68,16 @@ installFiles(){
     cp  "./colors/TitaniumDark.colors" "$colorschemes_dir/"
 
     echo "installing kvantum..."
+   
     
-    sudo dnf install -y kvantum #fedora
-    sudo apt install -y kvantum #ubuntu
-    sudo pacman install -y kvantum #arch
+    if command -v kvantummanager >/dev/null 2>&1
+    then
+        echo "Kvantum Manager is already installed no need to reinstall."
+    else
+        sudo dnf install -y kvantum #fedora
+        sudo apt install -y kvantum #ubuntu
+        sudo pacman install -y kvantum #arch
+    fi
 
     echo "installing kvantum theme..."
     if [ -d "$kvantum_dir/$THEME_NAME" ]; then
@@ -106,4 +112,4 @@ installFiles
 echo "activating theme..."
 lookandfeeltool -a $THEME_NAME
 runScripts
-# plasmashell --replace & disown
+plasmashell --replace & disown
