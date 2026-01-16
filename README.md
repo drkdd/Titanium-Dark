@@ -16,9 +16,11 @@ Titanium downloads the several different themes to your computer and mixes itsel
 
 If you want to revert the changes, the changes are:
 
-    - It adds **BorderlessMaximizedWindows=true** line to your kwinrc file in directory "$HOME/.config/kwinrc"
-    - Downloads kvantum ( you can delete it with **sudo dnf/apt/pacman remove kvantum** )
-    - It sets itself as default theme in kvconfig file in directory "$HOME/.config/Kvantum/kvantum.kvconfig"
+    It adds **BorderlessMaximizedWindows=true** line to your kwinrc file in directory "$HOME/.config/kwinrc"
+
+    Downloads kvantum ( you can delete it with **sudo dnf/apt/pacman remove kvantum** )
+
+    It sets itself as default theme in kvconfig file in directory "$HOME/.config/Kvantum/kvantum.kvconfig"
   
 I am considering to add an uninstall.sh file to make this process automatic but you can use this method until I add it.
 
