@@ -14,15 +14,6 @@ Titanium is my kde dark theme package (there is no light version sorry) that I a
 
 Titanium downloads the several different themes to your computer and mixes itself with them. It also makes several system file changes too. 
 
-If you want to revert the changes, the changes are:
-
-    It adds **BorderlessMaximizedWindows=true** line to your kwinrc file in directory "$HOME/.config/kwinrc"
-
-    Downloads kvantum ( you can delete it with **sudo dnf/apt/pacman remove kvantum** )
-
-    It sets itself as default theme in kvconfig file in directory "$HOME/.config/Kvantum/kvantum.kvconfig"
-  
-I am considering to add an uninstall.sh file to make this process automatic but you can use this method until I add it.
 
 **Note: "Activate linux" watermark is not included.**
 
