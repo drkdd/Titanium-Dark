@@ -8,7 +8,7 @@
             }
         ],
         "Category": "Global Themes (Plasma 6)",
-        "Description": "A global theme for KDE Plasma 6 in Dark Nordic colors with transparency, blur and rounded corners for UI elements",
+        "Description": "A global theme for KDE Plasma 6 in Dark colors with transparency, blur and rounded corners for UI elements",
         "EnabledByDefault": true,
         "Id": "Titanium-Dark",
         "License": "GPL-2.0+",
